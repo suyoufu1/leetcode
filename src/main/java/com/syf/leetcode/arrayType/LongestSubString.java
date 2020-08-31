@@ -1,6 +1,8 @@
 package com.syf.leetcode.arrayType;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -14,7 +16,7 @@ import java.util.Set;
  */
 public class LongestSubString {
     public static void main(String[] args) {
-        int max = maxL("abcabcabb");
+        int max = maxL2("abcabcabb");
         System.out.println(max);
     }
     public static int maxL(String str){
@@ -30,6 +32,26 @@ public class LongestSubString {
             }else {
                 set.remove(str.charAt(i));
                 i ++ ;
+            }
+        }
+        return max;
+    }
+
+    public static int maxL2(String sttr){
+        int max = 0;
+        int i = 0 , j = 0 ;
+        Map<Character , Integer> hashMap = new HashMap<>();
+        while (i < sttr.length() && j < sttr.length()){
+            if(!hashMap.containsKey(sttr.charAt(j))){
+                hashMap.put(sttr.charAt(j),j);
+                max = Math.max(max , j - i + 1);
+                j ++;
+            }else {
+                Integer index = hashMap.get(sttr.charAt(j));
+                for(int k = i ; k <= j ; k ++){
+                    hashMap.remove(sttr.charAt(k));
+                }
+                i = index + j ;
             }
         }
         return max;
