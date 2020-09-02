@@ -1,5 +1,7 @@
 package com.syf.leetcode.arrayType;
 
+import org.springframework.beans.factory.BeanFactory;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
