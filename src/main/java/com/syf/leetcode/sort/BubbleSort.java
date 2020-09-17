@@ -32,7 +32,6 @@ public class BubbleSort {
                 break;
             }
         }
-
     }
     private static void swap(int[] arr, int i, int j) {
         int temp = arr[j] ;
