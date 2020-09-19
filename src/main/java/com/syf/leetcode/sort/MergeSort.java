@@ -1,8 +1,10 @@
 package com.syf.leetcode.sort;
 
-import java.util.Arrays;
 
-
+/**
+ * @auth syf
+ * @Date 2020-9-18
+ */
 
 /**
  * 归并排序
@@ -64,5 +66,34 @@ public class MergeSort {
         }
     }
 
+    private static void merges(int[] arr,int low , int hight , int[] temp){
+        if(low < hight){
+            int mid = (low + hight) / 2 ;
+            merges(arr,low,mid,temp);
+            merges(arr,mid+1 , hight , temp);
+            mergeSort2(arr,low , mid , hight , temp);
+        }
+    }
+
+    private static void mergeSort2(int[] arr, int low, int mid, int hight, int[] temp) {
+        int i = 0 ;
+        int j = low , k = mid + 1 ;
+        while (j < mid && k <hight){
+            if(arr[j] < arr[k]){
+                temp[i++] = arr[j++] ;
+            }else {
+                temp[i++] = arr[k++];
+            }
+        }
+        while (j < mid){
+            temp[i++] = arr[j] ;
+        }
+        while (k <= hight){
+            temp[i++] = arr[k++];
+        }
+        for(int t = 0 ; t < i ; t ++){
+            arr[low + t] = arr[t];
+        }
+    }
 
 }
