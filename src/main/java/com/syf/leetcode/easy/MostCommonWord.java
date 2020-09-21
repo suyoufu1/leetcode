@@ -28,37 +28,37 @@ public class MostCommonWord {
     public static void main(String[] args) {
         String paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.";
         String[] banned = {"hit"};
-        String  res = mostCommonWord(paragraph,banned);
+        String res = mostCommonWord(paragraph, banned);
         System.out.println(res);
     }
 
     private static String mostCommonWord(String paragraph, String[] banned) {
         String[] s = paragraph.split("[!?',;. ]");
         Set<String> set = new HashSet<>();
-        for(String b : banned){
+        for (String b : banned) {
             set.add(b);
         }
-        Map<String,Integer> map = new HashMap();
-        for(String t : s){
-            if(set.contains(t.toLowerCase())){
+        Map<String, Integer> map = new HashMap();
+        for (String t : s) {
+            if (set.contains(t.toLowerCase())) {
                 continue;
             }
-            if(t.equals("")){
+            if (t.equals("")) {
                 continue;
             }
-            if(!map.containsKey(t.toLowerCase())){
-                map.put(t.toLowerCase(),1);
-            }else {
+            if (!map.containsKey(t.toLowerCase())) {
+                map.put(t.toLowerCase(), 1);
+            } else {
                 Integer num = map.get(t.toLowerCase());
-                map.put(t.toLowerCase(),num+1);
+                map.put(t.toLowerCase(), num + 1);
             }
             /*Integer cnt = map.getOrDefault(t, 0);
             map.put(t,cnt+1);*/
         }
-        int count  = 0 ;
-        String  res = "" ;
-        for (Map.Entry<String,Integer> entry : map.entrySet()){
-            if (entry.getValue() > count){
+        int count = 0;
+        String res = "";
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            if (entry.getValue() > count) {
                 count = entry.getValue();
                 res = entry.getKey();
             }
