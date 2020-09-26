@@ -32,6 +32,8 @@ public class MergeQu {
         if(len < 2){
             return intervals;
         }
+        //先排序
+        Arrays.sort(intervals,(o1,o2)->o1[0]-o2[0]);
         List<int[]> res = new ArrayList<>();
         res.add(intervals[0]);
         for (int i = 1 ; i < len ; i ++){
