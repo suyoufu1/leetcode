@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class NextPermutation {
     public static void main(String[] args) {
-        int[] nums = {3,2,1 };
+        int[] nums = {1,3,2 };
         nextPermutation(nums);
         System.out.println(nums);
         for (int x : nums){
