@@ -1,5 +1,7 @@
 package com.syf.leetcode.easy;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * @auth syf
  * @date 2020/9/20 13:07
@@ -21,7 +23,7 @@ public class AddStrings {
      * @param num2
      * @return
      */
-    private static String addStrings(String num1, String num2) {
+    private static @NotNull String addStrings(String num1, String num2) {
         int i = num1.length() - 1 ;
         int j  = num2.length() - 1 ;
         int flag = 0 ;
@@ -71,5 +73,13 @@ public class AddStrings {
             i -- ;
         }
         return res.reverse().toString();
+    }
+
+    public static String kuangjia(String param1 , String param2){
+        int i = param1.length() - 1, j = param2.length() - 2, add=0 ;
+        while (i >= 0 || j >= 0 || add !=0){
+            // 写业务逻辑
+        }
+        return "";
     }
 }

@@ -1,6 +1,5 @@
 package com.syf.leetcode.easy;
 
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.util.Arrays;
 
@@ -8,6 +7,11 @@ import java.util.Arrays;
  * @auth syf
  * @date 2020/9/19 18:37
  * @des 合并两个有序数组
+ *      s1 = {1,2,3,4,5,6,10,0,0,0,0,0}
+ *      s2 = {3,7,8,9,11}
+ *      merge = {1,2,3,3,4,5,6,7,8,9,10,11}
+ *      temp ={1,2,3,4,5,6,10
+ *      i , j , k
  */
 public class MergeTwoNums {
     public static void main(String[] args) {
@@ -60,4 +64,21 @@ public class MergeTwoNums {
         return num1;
     }
 
+    public static int[] frame(int[] nums1 , int[] nums2){
+        // 利用双指针
+        int i = 0 , j = 0 ;
+        // 合并后数组
+        int[] res = new int[nums1.length + nums2.length];
+        int k = 0 ;
+        while ((i < nums1.length) && (j < nums2.length)){
+            res[k++] = nums1[i] > nums2[j] ? nums2[j++] : nums1[i++];
+        }
+        while (i < nums1.length){
+            res[k++] = nums1[i] ;
+        }
+        while (j < nums2.length){
+            res[k++] = nums2[j] ;
+        }
+        return res;
+    }
 }

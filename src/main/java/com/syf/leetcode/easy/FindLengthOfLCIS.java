@@ -19,7 +19,7 @@ public class FindLengthOfLCIS {
         if(nums.length <= 1){
             return nums.length;
         }
-        //定义一个变量统计最大长度
+        //定义一个变量统计最大长度，用计数器来实现
         int maxLen = 1 ;
         int count = 1 ;
         int temp = nums[0];
@@ -36,6 +36,20 @@ public class FindLengthOfLCIS {
         return maxLen;
     }
 
+    public int frame(int[] param){
+        int count = 1  , maxCount = 1 , temp = param[0];
+        for(int i = 1 ; i < param.length ; i ++){
+            if(i > 0 && param[i] > param[i-1]){
+                count += 1 ;
+                temp = param[i] ;
+            } else {
+                count = 1 ;
+                temp = param[i] ;
+            }
+            maxCount = maxCount > count ? maxCount : count ;
+        }
+        return maxCount ;
+    }
     public int findLengthOfLCIS2(int[] nums) {
         if(nums.length <= 1){
             return nums.length;

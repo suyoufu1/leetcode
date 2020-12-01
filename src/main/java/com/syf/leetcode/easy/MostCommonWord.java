@@ -1,9 +1,6 @@
 package com.syf.leetcode.easy;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @auth syf
@@ -28,7 +25,7 @@ public class MostCommonWord {
     public static void main(String[] args) {
         String paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.";
         String[] banned = {"hit"};
-        String res = mostCommonWord(paragraph, banned);
+        String res = mostWordCount(paragraph, banned);
         System.out.println(res);
     }
 
@@ -64,5 +61,44 @@ public class MostCommonWord {
             }
         }
         return res;
+    }
+
+    /**
+     * 用什么数据结构：
+     *      1.hashMap<String,Integer>
+     *      2.set<String>
+     */
+    public static String mostWordCount(String param , String[] banned){
+        Map<String,Integer> map = new HashMap<>();
+        Set<String> set = new HashSet<>();
+        for (String str : banned){
+            set.add(str);
+        }
+        String[] strings = param.split("[!',. ]");
+        for(String string : strings){
+            if(set.contains(string.toLowerCase())){
+                continue;
+            }
+            if(string == ""){
+                continue;
+            }
+
+            if(!map.containsKey(string.toLowerCase())){
+                map.put(string.toLowerCase(),1);
+            }else {
+                Integer value = map.get(string);
+                map.put(string.toLowerCase(),value+1);
+            }
+        }
+        int count = 0 ;
+        String res = "";
+        for(Map.Entry<String,Integer> entry : map.entrySet()){
+            Integer value = entry.getValue();
+            if (count < value){
+                count = value ;
+                res = entry.getKey();
+            }
+        }
+        return res ;
     }
 }
