@@ -1,4 +1,4 @@
-package com.syf.leetcode.arrayType;
+package com.syf.leetcode.stringType;
 
 /**
  * 最长回文子字符串

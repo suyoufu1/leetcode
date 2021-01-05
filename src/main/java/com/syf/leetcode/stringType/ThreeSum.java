@@ -1,4 +1,4 @@
-package com.syf.leetcode.arrayType;
+package com.syf.leetcode.stringType;
 
 /**
  * Created by syf on 2020/8/24

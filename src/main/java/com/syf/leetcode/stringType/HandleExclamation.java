@@ -1,4 +1,4 @@
-package com.syf.leetcode.arrayType;
+package com.syf.leetcode.stringType;
 
 
 import io.vertx.core.json.JsonArray;

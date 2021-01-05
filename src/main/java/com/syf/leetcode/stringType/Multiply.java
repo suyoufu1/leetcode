@@ -1,7 +1,5 @@
-package com.syf.leetcode.arrayType;
+package com.syf.leetcode.stringType;
 
-
-import com.sun.org.apache.xerces.internal.xs.ItemPSVI;
 
 /**
  * @auth syf

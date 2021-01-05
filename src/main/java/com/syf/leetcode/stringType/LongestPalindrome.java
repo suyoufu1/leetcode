@@ -1,4 +1,4 @@
-package com.syf.leetcode.arrayType;
+package com.syf.leetcode.stringType;
 
 import java.util.HashMap;
 import java.util.Map;

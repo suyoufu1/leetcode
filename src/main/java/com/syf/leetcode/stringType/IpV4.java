@@ -1,8 +1,5 @@
-package com.syf.leetcode.arrayType;
+package com.syf.leetcode.stringType;
 
-import jdk.nashorn.internal.runtime.regexp.joni.Regex;
-
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
