@@ -1,6 +1,5 @@
 package com.syf.leetcode.binaryTree;
 
-import io.netty.handler.codec.dns.DnsQuery;
 
 import java.util.*;
 
