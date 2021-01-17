@@ -12,11 +12,7 @@ import java.util.Queue;
 public class Sequence {
     // 层序遍历
     public static void main(String[] args) {
-        Node root = new Node(2);
-        root.left = new Node(1);
-        root.right = new Node(3);
-        root.left.left = new Node(0);
-        root.right.right = new Node(4);
+        Node root = NodeInit.init();
         sequence2(root);
     }
 
